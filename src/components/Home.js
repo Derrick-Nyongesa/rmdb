@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 // Components
 import HeroImage from './HeroImage';
+import Grid from './Grid';
 
 
 
@@ -11,6 +12,7 @@ import HeroImage from './HeroImage';
 import NoImage from '../images/no_image.jpg';
 // API
 import API from '../API';
+import { moveEmitHelpers } from 'typescript';
 
 const initialState = {
   page: 0,
@@ -76,6 +78,9 @@ class Home extends Component {
             text={movies.results[0].overview}
           />
         ) : null}
+        <Grid header='Popular Movies'>{movies.results.map(movie => (
+          <div key={movie.id}>{movie.title}</div>
+        ))}</Grid>
         
         
       </>
