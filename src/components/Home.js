@@ -6,7 +6,7 @@ import HeroImage from './HeroImage';
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
-
+import SearchBar from './SearchBar';
 
 
 
@@ -80,7 +80,8 @@ class Home extends Component {
             text={movies.results[0].overview}
           />
         ) : null}
-        <Grid header='Popular Movies'>{movies.results.map(movie => (
+        <SearchBar setSearchTerm={this.handleSearch}></SearchBar>
+        <Grid header={searchTerm ? 'Search Result' : 'Popular Movies'}>{movies.results.map(movie => (
           <Thumb
           key={movie.id}
           clickable
