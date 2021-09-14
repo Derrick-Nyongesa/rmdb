@@ -7,7 +7,7 @@ import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
 import SearchBar from './SearchBar';
-
+import Button from './Button';
 
 
 // Image
@@ -29,7 +29,8 @@ class Home extends Component {
     searchTerm: '',
     isLoadingMore: false,
     loading: false,
-    error: false
+    error: false,
+    setisLoadingMore: false,
   };
 
   fetchMovies = async (page, searchTerm = '') => {
@@ -94,7 +95,10 @@ class Home extends Component {
         />
         ))}
         </Grid>
-        <Spinner></Spinner>
+        {loading && <Spinner></Spinner>}
+        {movies.page < movies.total_pages && !loading && (
+          <Button text='Load More' callback={this.handleLoadMore}></Button>
+        )}
         
         
       </>
