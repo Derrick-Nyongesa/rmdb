@@ -3,7 +3,7 @@
 ![developer](https://img.shields.io/badge/Developer-Derrick%20Daniel%20Nyongesa-blue)
 
 ## Description
-Thia is a movie review website using Angular. The web application will allow a user to find any movie in the database.
+Thia is a movie review website using React. The web application will allow a user to find any movie in the database.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
